@@ -51,7 +51,7 @@
                 <div class="col-xs-12">Самый крутой набор</div>
                 <div class="col-xs-12">6500 руб</div>
                 <div class="col-xs-6"><a href="" class="details">подробнее</a></div>
-                <div class="col-xs-6"><a href="" class="to_basket">в корзину</a></div>6
+                <div class="col-xs-6"><a href="" class="to_basket">в корзину</a></div>
             </div>
         </div>
     </div>

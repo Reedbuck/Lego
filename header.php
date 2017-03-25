@@ -47,10 +47,10 @@
         <div class="header__bottom">
             <div class="container vertical-align">
                 <div class="col-md-2 logo"><a href="/"><img src="<?php bloginfo('template_url'); ?>/images/logo.png"></a></div>
-                <div class="col-md-6 navigation-menu">
+                <div class="col-md-5 navigation-menu">
                     <?php wp_nav_menu( array( 'container_class' => 'navigation-menu__top', 'theme_location' => 'top_menu' ) ); ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <form role="search" method="get" id="searchform" action="/" class="">
                         <div class="search-form">
                             <input type="text" class="search-form__input" placeholder="слово для поиска" name="s" id="s">
@@ -58,7 +58,10 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-2 contact-info"></div>
+                <div class="col-md-2 contact-info">
+                    <div class="contact-info__telephone">+7 499 000 00 00</div>
+                    <div class="contact-info__description">Звоните нам круглосуточно!</div>
+                </div>
             </div>
         </div>
     </header>

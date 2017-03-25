@@ -1,11 +1,30 @@
 .search-form {
+    width: 100%;
+    border: 1px solid #000;
+    min-height: 40px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
     .search-form__input{
         border: none; /* Убираем рамку */
         outline: none; /* Убираем свечение в Chrome и Safari */
         -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
-        width: 100%; /* Ширина поля */
+        width: 75%; /* Ширина поля */
         vertical-align: middle; /* Выравнивание по середине */   
+        padding: 0px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
     }
     .search-form__submite {
+        width: 25%; /* Ширина кнопки */
+        height: 100%; /* Высота кнопки */
+        position: absolute;
+        border: none; /* Убираем рамку */
+        background: url(../../images/search.svg) no-repeat; /* Параметры фона */
+        background-color: white; /* Параметры фона */
+        background-size: 30px;
+        background-position: center;
     }
 }

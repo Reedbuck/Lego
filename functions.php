@@ -4,13 +4,15 @@ require_once ('/function/style-and-script-connect.php'); // подключени
 
 require_once ('/function/position-menu.php'); // меню
 
+require_once ('/function/sidebars.php'); // создание боковых панелей
+
+
 // require_once ('/function/breadcrumbs.php'); // хлебные крошки
 
 // require_once ('/function/front-date.php'); // Вывод даты. уточнить и разобрать
 
 // require_once ('/function/meta.php'); // что-то связанное с мета. Разобрать
 
-require_once ('/function/sidebars.php'); // создание боковых панелей
 
 // require_once ('/function/loadmore-post.php'); // загрука дополнительных постов через ajax
 
