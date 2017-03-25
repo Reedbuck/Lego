@@ -1,0 +1,43 @@
+.rb_carousel {
+    width: 100%;
+    position: relative;
+    .rb_carousel-control {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        .rb_carousel-button-left {
+            position: absolute;
+            display: flex;
+            height: 100%;
+            left: -25px;
+            align-items: center;
+        }
+        .rb_carousel-button-right {
+            position: absolute;
+            display: flex;
+            height: 100%;
+            right: -25px;
+            align-items: center;
+        }
+    }
+    .rb_carousel-wrapper {
+        overflow: hidden; /* скрываем содержимое, выходящее за рамки основной области */
+        position:relative;
+        .rb_carousel-items {
+            padding-left: 0px;
+            width: 2000px; /* устанавливаем большую ширину для набора элементов */
+            position: relative; /* позиционируем блок относительно основной области карусели */
+            .rb_carousel-block {
+                list-style: none;
+                float: left; /* выстраиваем все элементы карусели в ряд */
+                width: 12.5%; /* задаём ширину каждого элемента */
+                padding: 0px 0px 0px 0px; /* делаем оступы, чтобы элементы не сливались */
+                img{
+                display:block;
+                width: 100%;
+            }
+            }
+        }
+    }
+}
