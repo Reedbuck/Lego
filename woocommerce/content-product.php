@@ -28,6 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <div class="col-md-4 product-cart"<?php // post_class(); ?>>
+    <div class="product-cart__box">
 	<?php
 	
 
@@ -76,4 +77,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
+    </div>
 </div>
