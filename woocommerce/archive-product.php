@@ -30,6 +30,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
 		do_action( 'woocommerce_before_main_content' );
+        do_action( 'woocommerce_breadcrumb' );
 	?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -51,7 +52,7 @@ get_header( 'shop' ); ?>
 			do_action( 'woocommerce_archive_description' );
 		?>
 
-<div class="col-md-3 catalog__sidebars">
+<div class="col-md-2 catalog__sidebars">
         <?php
             /**
              * woocommerce_sidebar hook.
@@ -62,7 +63,7 @@ get_header( 'shop' ); ?>
 
         ?>
 </div>
-<div class="col-md-9 catalog__content">
+<div class="col-md-10 catalog__content">
 		<?php if ( have_posts() ) : ?>
 
 			<?php
