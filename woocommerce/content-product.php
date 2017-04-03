@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-md-4 product-cart"<?php // post_class(); ?>>
+<div class="<?php if ( is_product() ) { ?>col-md-3<?php } else { ?>col-md-4<?php } ?> product-cart"<?php // post_class(); ?>>
     <div class="product-cart__box">
 	<?php
 	
@@ -40,7 +40,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-    do_action( 'woocommerce_shop_info_item' );    
+    do_action( 'woocommerce_shop_info_item' ); 
+        
+    do_action( 'woocommerce_shop_article' );    
      
         
 	/**
@@ -64,7 +66,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
+	do_action( 'woocommerce_rb_before_shop_loop_item' );
     
     ?>
     
@@ -78,7 +80,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_link_close - 5
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
+	do_action( 'woocommerce_rb_after_shop_loop_item' );
 	?>
     </div>
 </div>

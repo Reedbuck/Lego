@@ -30,7 +30,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
 		do_action( 'woocommerce_before_main_content' );
-        do_action( 'woocommerce_breadcrumb' );
+        do_action( 'woocommerce_rb_breadcrumb' );
 	?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

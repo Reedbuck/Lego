@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     
     <div class="col-md-7 single-product">
         <div class="col-md-12">
-            <?php do_action( 'woocommerce_breadcrumb' ); ?>
+            <?php do_action( 'woocommerce_rb_breadcrumb' ); ?>
         </div>
         <div class="col-md-12 single-product__image">
 
@@ -58,18 +58,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="col-md-5 single-product__info">
 
 		<?php
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
+			do_action( 'woocommerce_template_single_title' );
+			do_action( 'woocommerce_template_single_price' );
+			do_action( 'woocommerce_template_single_meta' );
+			do_action( 'woocommerce_to_wish_list' );
 		?>
 
 	</div><!-- .summary -->

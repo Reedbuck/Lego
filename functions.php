@@ -6,6 +6,16 @@ require_once ('/function/position-menu.php'); // меню
 
 require_once ('/function/sidebars.php'); // создание боковых панелей
 
+require_once ('/function/woocommerce/single_product_hooks.php'); // исправление хуков для отдельного товара woocommerce
+
+require_once ('/function/woocommerce/catalog_product_hooks.php'); // исправление хуков для каталога товаров woocommerce
+
+require_once ('/function/woocommerce/catalog_product_class.php'); // исправление классов для каталога товаров woocommerce
+
+require_once ('/function/woocommerce/common_hooks.php'); // исправление общих хуков woocommerce
+
+require_once ('/function/woocommerce/common_class.php'); // исправление общих классов woocommerce
+
 
 // require_once ('/function/breadcrumbs.php'); // хлебные крошки
 
