@@ -8,6 +8,8 @@ require_once ('/function/sidebars.php'); // создание боковых па
 
 require_once ('/function/woocommerce/single_product_hooks.php'); // исправление хуков для отдельного товара woocommerce
 
+require_once ('/function/woocommerce/single_product_class.php'); // исправление хуков для отдельного товара woocommerce
+
 require_once ('/function/woocommerce/catalog_product_hooks.php'); // исправление хуков для каталога товаров woocommerce
 
 require_once ('/function/woocommerce/catalog_product_class.php'); // исправление классов для каталога товаров woocommerce

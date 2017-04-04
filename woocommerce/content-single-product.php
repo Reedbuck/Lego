@@ -38,11 +38,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>> 
     
-    <div class="col-md-7 single-product">
+    <div class="col-md-7 singles-product">
         <div class="col-md-12">
             <?php do_action( 'woocommerce_rb_breadcrumb' ); ?>
         </div>
-        <div class="col-md-12 single-product__image">
+        <div class="col-md-12 singles-product__image">
 
 	<?php
 		/**
@@ -55,13 +55,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
         </div>
     </div>
-	<div class="col-md-5 single-product__info">
+	<div class="col-md-5 singles-product__info">
 
 		<?php
 			do_action( 'woocommerce_template_single_title' );
 			do_action( 'woocommerce_template_single_price' );
+			do_action( 'woocommerce_rb_single_availability' );
+			do_action( 'woocommerce_template_single_rating' );
+			do_action( 'woocommerce_template_single_excerpt' );
 			do_action( 'woocommerce_template_single_meta' );
+			do_action( 'woocommerce_template_single_sharing' );
 			do_action( 'woocommerce_to_wish_list' );
+            do_action( 'woocommerce_rb_single_add_to_cart' );
+        
+			
 		?>
 
 	</div><!-- .summary -->
