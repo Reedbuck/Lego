@@ -15,6 +15,19 @@ function reedbuck_register_wp_sidebars() {
 			'after_title' => '</h3>',
 		)
         
+	);  
+    /* сайдбар для фильтров */
+	register_sidebar(
+		array(
+			'id' => 'catalog__filter', // уникальный id
+			'name' => 'Фильтры', // название сайдбара
+			'description' => 'Перетащите сюда виджеты, чтобы добавить их в сайдбар.', // описание
+			'before_widget' => '<div id="%1$s" class="side widget deplay %2$s">', // по умолчанию виджеты выводятся <li>-списком
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="filters-title">', // по умолчанию заголовки виджетов в <h2>
+			'after_title' => '</h3>',
+		)
+        
 	);   
 }
 

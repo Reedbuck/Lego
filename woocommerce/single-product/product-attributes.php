@@ -29,53 +29,43 @@ $attributes = $product->get_attributes();
 ob_start();
 
 ?>
-<table class="shop_attributes">
+<div class="attributes-information">
+    <div class="attributes-information__part">
+        <p>Год выпуска</p>
+    <?php     
+    $values = wc_get_product_terms( $product->id, $attributes['pa_years-creation']['name'], array( 'fields' => 'names' ) );
+    echo '';
+    echo $values[0];
+    ?>
+    </div>
+    <?php 
+    $values = wc_get_product_terms( $product->id, $attributes['pa_amount-details']['name'], array( 'fields' => 'names' ) );
+    echo $values[0];
+    ?>
+    
+    <?php 
+    $values = wc_get_product_terms( $product->id, $attributes['pa_amount-figure']['name'], array( 'fields' => 'names' ) );
+    echo $values[0];
+    ?>
+    
+    <?php 
+    $values = wc_get_product_terms( $product->id, $attributes['pa_years-user']['name'], array( 'fields' => 'names' ) );
+    echo $values[0];
+    ?>
+    
+    <?php 
+    $values = wc_get_product_terms( $product->id, $attributes['pa_sex-user']['name'], array( 'fields' => 'names' ) );
+    echo $values[0] . ' ';
+    ?>
+    
+    <?php 
+    echo 'Артикул';
+    do_action( 'woocommerce_shop_article' ); 
+    $has_row = true;
+    ?>
+    
+</div>
 
-	<?php if ( $product->enable_dimensions_display() ) : ?>
-
-		<?php if ( $product->has_weight() ) : $has_row = true; ?>
-			<tr class="<?php if ( ( $alt = $alt * -1 ) === 1 ) echo 'alt'; ?>">
-				<th><?php _e( 'Weight', 'woocommerce' ) ?></th>
-				<td class="product_weight"><?php echo wc_format_localized_decimal( $product->get_weight() ) . ' ' . esc_attr( get_option( 'woocommerce_weight_unit' ) ); ?></td>
-			</tr>
-		<?php endif; ?>
-
-		<?php if ( $product->has_dimensions() ) : $has_row = true; ?>
-			<tr class="<?php if ( ( $alt = $alt * -1 ) === 1 ) echo 'alt'; ?>">
-				<th><?php _e( 'Dimensions', 'woocommerce' ) ?></th>
-				<td class="product_dimensions"><?php echo $product->get_dimensions(); ?></td>
-			</tr>
-		<?php endif; ?>
-
-	<?php endif; ?>
-
-	<?php foreach ( $attributes as $attribute ) :
-		if ( empty( $attribute['is_visible'] ) || ( $attribute['is_taxonomy'] && ! taxonomy_exists( $attribute['name'] ) ) ) {
-			continue;
-		} else {
-			$has_row = true;
-		}
-		?>
-		<tr class="<?php if ( ( $alt = $alt * -1 ) == 1 ) echo 'alt'; ?>">
-			<th><?php echo wc_attribute_label( $attribute['name'] ); ?></th>
-			<td><?php
-				if ( $attribute['is_taxonomy'] ) {
-
-					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
-					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-
-				} else {
-
-					// Convert pipes to commas and display values
-					$values = array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
-					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-
-				}
-			?></td>
-		</tr>
-	<?php endforeach; ?>
-
-</table>
 <?php
 if ( $has_row ) {
 	echo ob_get_clean();

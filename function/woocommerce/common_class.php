@@ -1,6 +1,6 @@
 <?php 
 
-// Отключаем стандартные хуки wordpress (карточка товара)
+// хлебные крошки
 
 if ( ! function_exists( 'woocommerce_rb_breadcrumb' ) ) {
 

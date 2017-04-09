@@ -11,14 +11,14 @@ function woocommerce_rb_template_loop_product_link_close() {
 }
 
 
-if ( ! function_exists( 'woocommerce_rb_template_loop_add_to_cart' ) ) {
+if ( ! function_exists( 'woocommerce_rb_add_to_cart' ) ) {
 
 	/**
 	 * Get the add to cart template for the loop.
 	 *
 	 * @subpackage	Loop
 	 */
-	function woocommerce_rb_template_loop_add_to_cart( $args = array() ) {
+	function woocommerce_rb_add_to_cart( $args = array() ) {
 		global $product;
 
 		if ( $product ) {
@@ -37,5 +37,59 @@ if ( ! function_exists( 'woocommerce_rb_template_loop_add_to_cart' ) ) {
 			wc_get_template( 'loop/add-to-cart.php', $args );
 		}
         echo "</div>";
+	}
+}
+
+if ( ! function_exists( 'woocommerce_shop_article' ) ) {
+
+	/**
+	 * Get the product article for the info.
+	 *
+	 * @subpackage	info
+	 */
+	function woocommerce_shop_article() {
+        
+        global $product;
+        echo '<div class="product-cart__article">'. $product->sku .'</div>';
+        
+	}
+}
+
+
+if ( ! function_exists( 'woocommerce_catalog_product_thumbnail' ) ) {
+
+	/**
+	 * Get the product thumbnail for the loop.
+	 *
+	 * @subpackage	Loop
+	 */
+	function woocommerce_catalog_product_thumbnail() {
+        $temp_url = get_bloginfo('template_url');
+        echo '<div class="product-cart__wish"><a href="#"><img src="'. $temp_url .'/images/wishlist.svg"></a></div>';
+        if( 0 == 0 ){
+            echo '<div class="product-cart__new"><a href="#">NEW</a></div>';
+        }
+        echo woocommerce_get_product_thumbnail();
+	}
+}
+
+/**
+*
+*   Информация о продукте в карточке товара (открытие)
+*
+*/
+
+
+if ( ! function_exists( 'woocommerce_rb_open_product_info' ) ) {
+
+	/**
+	 * Get the product article for the info.
+	 *
+	 * @subpackage	info
+	 */
+	function woocommerce_rb_open_product_info() {
+    
+        echo '<div class="product-cart__info">';
+        
 	}
 }

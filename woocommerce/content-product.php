@@ -40,7 +40,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-    do_action( 'woocommerce_shop_info_item' ); 
+    do_action( 'woocommerce_rb_open_product_info' ); 
         
     do_action( 'woocommerce_shop_article' );    
      

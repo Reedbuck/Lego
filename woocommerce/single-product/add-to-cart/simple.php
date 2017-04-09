@@ -36,7 +36,7 @@ if ( ! $product->is_purchasable() ) {
 	<form class="cart" method="post" enctype='multipart/form-data'>
 	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-<!--
+
 	 	<?php
 	 		if ( ! $product->is_sold_individually() ) {
 	 			woocommerce_quantity_input( array(
@@ -46,7 +46,7 @@ if ( ! $product->is_purchasable() ) {
 	 			) );
 	 		}
 	 	?>
--->
+
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 

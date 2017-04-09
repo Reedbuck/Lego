@@ -63,17 +63,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_rb_single_availability' );
 			do_action( 'woocommerce_template_single_rating' );
 			do_action( 'woocommerce_template_single_excerpt' );
-			do_action( 'woocommerce_template_single_meta' );
 			do_action( 'woocommerce_template_single_sharing' );
-			do_action( 'woocommerce_to_wish_list' );
             do_action( 'woocommerce_rb_single_add_to_cart' );
-        
+			do_action( 'woocommerce_to_wish_list' );
+            do_action( 'woocommerce_rb_single_category' );
 			
 		?>
+        
 
+    
+<!--
+<div>
+    <?php 
+    
+    global $product;
+    
+    echo '<pre>';
+    print_r($mass = get_object_vars($product));  ?>
+</div>
+-->
+        
 	</div><!-- .summary -->
 
+    <div class="col-md-12">
 	<?php
+    do_action( 'woocommerce_rb_single_atributs_info' );
+    ?>
+    </div>
+    <?php
 		/**
 		 * woocommerce_after_single_product_summary hook.
 		 *
@@ -81,6 +98,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
+		
+    
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 

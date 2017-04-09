@@ -64,6 +64,10 @@ get_header( 'shop' ); ?>
         ?>
 </div>
 <div class="col-md-10 catalog__content">
+    <div class="col-md-12 catalog__filter">
+        <?php dynamic_sidebar( 'catalog__filter' ); ?>
+    </div>
+    <div class="catalog__product">
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -102,7 +106,7 @@ get_header( 'shop' ); ?>
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
 		<?php endif; ?>
-    
+    </div>
 </div>
 
 	<?php
