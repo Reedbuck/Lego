@@ -37,58 +37,87 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>> 
-    
-    <div class="col-md-7 singles-product">
-        <div class="col-md-12">
-            <?php do_action( 'woocommerce_rb_breadcrumb' ); ?>
-        </div>
-        <div class="col-md-12 singles-product__image">
+    <div class="container">
+        
+        <div class="col-md-7 singles-product">
+            <div class="col-md-12">
+                <?php do_action( 'woocommerce_rb_breadcrumb' ); ?>
+            </div>
+            <div class="col-md-12 singles-product__image">
 
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
+        <?php
+            /**
+             * woocommerce_before_single_product_summary hook.
+             *
+             * @hooked woocommerce_show_product_sale_flash - 10
+             * @hooked woocommerce_show_product_images - 20
+             */
+            do_action( 'woocommerce_before_single_product_summary' );
+        ?>
+            </div>
+        </div>
+        <div class="col-md-5 singles-product__info">
+
+            <?php
+                do_action( 'woocommerce_template_single_title' );
+                do_action( 'woocommerce_template_single_price' );
+                do_action( 'woocommerce_rb_single_availability' );
+                do_action( 'woocommerce_template_single_rating' );
+                do_action( 'woocommerce_template_single_excerpt' );
+                do_action( 'woocommerce_template_single_sharing' );
+                do_action( 'woocommerce_rb_single_add_to_cart' );
+                do_action( 'woocommerce_to_wish_list' );
+                do_action( 'woocommerce_rb_single_category' );
+
+            ?>
+
+
+
+    <!--
+    <div>
+        <?php 
+
+        global $product;
+
+        echo '<pre>';
+        print_r($mass = get_object_vars($product));  ?>
+    </div>
+    -->
+
+        </div><!-- .summary -->
+    </div>
+
+    <div class="single-information">
+        <div class="container">
+        <?php
+        do_action( 'woocommerce_rb_single_atributs_info' );
+        ?>
+        <div class="single-information__image"><img src="<?php bloginfo('template_url'); ?>/images/facebook.png" alt=""></div>
+        <div class="single-information__image"><img src="<?php bloginfo('template_url'); ?>/images/twitter.png" alt=""></div>
+        <div class="single-information__image"><img src="<?php bloginfo('template_url'); ?>/images/google+.png" alt=""></div>
+        <div class="single-information__image"><img src="<?php bloginfo('template_url'); ?>/images/pinterest.png" alt=""></div>
         </div>
     </div>
-	<div class="col-md-5 singles-product__info">
 
-		<?php
-			do_action( 'woocommerce_template_single_title' );
-			do_action( 'woocommerce_template_single_price' );
-			do_action( 'woocommerce_rb_single_availability' );
-			do_action( 'woocommerce_template_single_rating' );
-			do_action( 'woocommerce_template_single_excerpt' );
-			do_action( 'woocommerce_template_single_sharing' );
-            do_action( 'woocommerce_rb_single_add_to_cart' );
-			do_action( 'woocommerce_to_wish_list' );
-            do_action( 'woocommerce_rb_single_category' );
-			
-		?>
-        
+    <div class="single-description">
+        <div class="container">
+            <?php
+            do_action( 'woocommerce_rb_single_description' );
+            ?>
+        </div>
+    </div>
 
-    
-<!--
-<div>
-    <?php 
-    
-    global $product;
-    
-    echo '<pre>';
-    print_r($mass = get_object_vars($product));  ?>
-</div>
--->
-        
-	</div><!-- .summary -->
-
-    <div class="col-md-12">
-	<?php
-    do_action( 'woocommerce_rb_single_atributs_info' );
-    ?>
+    <div class="single-comment">
+        <div class="container">
+            <div class="col-xs-9">
+            <?php
+                do_action( 'woocommerce_rb_open_comments' );
+            ?>
+            </div>
+            <div class="col-xs-3">
+                <div class="comment-add-button"><a href="#">ДОБАВИТЬ ОТЗЫВ</a></div>
+            </div>
+        </div>
     </div>
     <?php
 		/**
@@ -100,11 +129,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		
     
-		do_action( 'woocommerce_after_single_product_summary' );
+		
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
+
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

@@ -1,0 +1,73 @@
+.single-comment{
+    border-top: 1px solid #e0e0e0;
+    padding: 30px 0px;
+    .woocommerce-Reviews{
+        #comments{
+            h2.woocommerce-Reviews-title{
+                display: flex;
+                align-items: center;
+                font-size: 30px;
+                font-weight: 600;
+                &:before{
+                    content: "";
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 23px;
+                    background-size: cover;
+                    background-image: url(../../images/customer-reviews.svg);
+                    display: inline-block;
+                }
+            }
+            ol.commentlist{
+                li{
+                    padding: 15px 0px 15px 0px !important;
+                    border-top: 1px solid #e0e0e0 !important;
+                    .comment_container{
+                        p.meta{
+                            strong{
+                                color: #31a1e0;
+                                font-size: 20px;
+                            }
+                            time{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .description{
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+                    .ratings-box{
+                        .star-rating{
+                            font-size: 2em;
+                            float: left;
+                            margin-right: 10px;
+                        }
+                        .count-rating-num{
+                            font-size: 18px;
+                            line-height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .comment-add-button{
+        a{
+            color: #ffffff;
+            background: linear-gradient(to bottom, #088adf 0%, #005b93 100%);
+            box-shadow: inset 0px 0px 2px 1px rgba(255, 255, 255, 0.39) !important;
+            border: 1px solid #858585;
+            border-radius: 7px !important;
+            text-transform: uppercase;
+            padding: 11px 18px;
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}

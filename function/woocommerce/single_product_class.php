@@ -121,7 +121,98 @@ if ( ! function_exists( 'woocommerce_rb_single_description' ) ) {
         echo $heading; 
         echo '</h2>';
         endif; 
-
+        echo '<div class="col-md-7 single-description__content">';
         the_content();
+        echo '</div>';
+        echo '<div class="col-md-5 single-description__thrumb">';
+            echo '<div class="col-md-12 thrumb__image">';
+                echo woocommerce_get_product_thumbnail();
+            echo '</div>';
+            echo '<div class="col-md-12 thrumb__button">';
+                echo '<a href="">Взять в аренду</a>';
+            echo '</div>';
+        echo '</div>';
 	}
 }
+
+
+
+
+
+if ( ! function_exists( 'woocommerce_rb_open_comments' ) ) {
+
+	/**
+	 * 
+	 *  Вывод самих комментариев
+	 * 
+	 */
+    
+	function woocommerce_rb_open_comments( $comment ) {
+        
+		comments_template('/singl-product/revew.php');
+        
+	}
+}
+
+
+if ( ! function_exists( 'woocommerce_rb_comments' ) ) {
+
+	/**
+	 * 
+	 *  Вывод самих комментариев
+	 * 
+	 */
+    
+	function woocommerce_rb_comments( $comment, $args, $depth ) {
+        
+		$GLOBALS['comment'] = $comment;
+		wc_get_template( 'single-product/review.php', array( 'comment' => $comment, 'args' => $args, 'depth' => $depth ) );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_rb_comment_gravatar' ) ) {
+	/**
+	 *
+	 *  вывод аватара автора
+	 * 
+	 */
+	function woocommerce_rb_comment_gravatar( $comment ) {
+		echo get_avatar( $comment, apply_filters( 'woocommerce_review_gravatar_size', '60' ), '' );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_rb_comment_rating' ) ) {
+	/**
+	 * 
+	 * выставленный рейтинг товару в данном коментарии
+	 * 
+	 */
+	function woocommerce_rb_comment_rating() {
+		wc_get_template( 'single-product/review-rating.php' );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_rb_comment_meta' ) ) {
+	/**
+	 * 
+	 * Дата, автор
+	 *
+	 */
+	function woocommerce_rb_comment_meta() {
+		wc_get_template( 'single-product/review-meta.php' );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_rb_comment_text' ) ) {
+
+	/**
+	 * текст комментария
+	 */
+	function woocommerce_rb_comment_text() {
+		echo '<div itemprop="description" class="description">';
+		comment_text();
+		echo '</div>';
+	}
+}
+
+

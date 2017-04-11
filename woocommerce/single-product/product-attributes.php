@@ -31,38 +31,41 @@ ob_start();
 ?>
 <div class="attributes-information">
     <div class="attributes-information__part">
-        <p>Год выпуска</p>
-    <?php     
-    $values = wc_get_product_terms( $product->id, $attributes['pa_years-creation']['name'], array( 'fields' => 'names' ) );
-    echo '';
-    echo $values[0];
-    ?>
+        <p>Артикул:</p>
+        <?php 
+        do_action( 'woocommerce_shop_article' ); 
+        $has_row = true;
+        ?>
     </div>
-    <?php 
-    $values = wc_get_product_terms( $product->id, $attributes['pa_amount-details']['name'], array( 'fields' => 'names' ) );
-    echo $values[0];
-    ?>
-    
-    <?php 
-    $values = wc_get_product_terms( $product->id, $attributes['pa_amount-figure']['name'], array( 'fields' => 'names' ) );
-    echo $values[0];
-    ?>
-    
-    <?php 
-    $values = wc_get_product_terms( $product->id, $attributes['pa_years-user']['name'], array( 'fields' => 'names' ) );
-    echo $values[0];
-    ?>
-    
-    <?php 
-    $values = wc_get_product_terms( $product->id, $attributes['pa_sex-user']['name'], array( 'fields' => 'names' ) );
-    echo $values[0] . ' ';
-    ?>
-    
-    <?php 
-    echo 'Артикул';
-    do_action( 'woocommerce_shop_article' ); 
-    $has_row = true;
-    ?>
+    <div class="attributes-information__part">
+        <p>Год выпуска:</p>
+        <?php     
+        $values = wc_get_product_terms( $product->id, $attributes['pa_years-creation']['name'], array( 'fields' => 'names' ) );
+        echo '';
+        echo $values[0];
+        ?>
+    </div>
+    <div class="attributes-information__part">
+        <p>Возраст:</p>
+        <?php 
+        $values = wc_get_product_terms( $product->id, $attributes['pa_years-user']['name'], array( 'fields' => 'names' ) );
+        echo $values[0];
+        ?>
+    </div>
+    <div class="attributes-information__part">
+        <p>Детали:</p>
+        <?php 
+        $values = wc_get_product_terms( $product->id, $attributes['pa_amount-details']['name'], array( 'fields' => 'names' ) );
+        echo $values[0];
+        ?>
+    </div>
+    <div class="attributes-information__part">
+        <p>Пол:</p>
+        <?php 
+        $values = wc_get_product_terms( $product->id, $attributes['pa_sex-user']['name'], array( 'fields' => 'names' ) );
+        echo $values[0] . ' ';
+        ?>
+    </div>
     
 </div>
 

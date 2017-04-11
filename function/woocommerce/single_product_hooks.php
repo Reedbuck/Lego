@@ -25,3 +25,9 @@ add_action( 'woocommerce_rb_single_availability', 'woocommerce_rb_single_availab
 add_action( 'woocommerce_to_wish_list', 'woocommerce_to_wish_list', 50 ); // кнопка в желаемое
 add_action( 'woocommerce_rb_single_atributs_info', 'woocommerce_rb_single_atributs_info', 50 ); // атрибуты-информация о товаре
 add_action( 'woocommerce_rb_single_description', 'woocommerce_rb_single_description', 50 ); // Описание товара
+add_action( 'woocommerce_rb_open_comments', 'woocommerce_rb_open_comments', 50 ); // Вывод комментариев целиком
+add_action( 'woocommerce_rb_comments', 'woocommerce_rb_comments', 50 ); // Вывод комментариев целиком
+add_action( 'woocommerce_rb_comment_gravatar', 'woocommerce_rb_comment_gravatar', 50 ); // Вывод аватара автора
+add_action( 'woocommerce_rb_comment_rating', 'woocommerce_rb_comment_rating', 50 ); // Вывод рейтинга продукту в комменте
+add_action( 'woocommerce_rb_comment_meta', 'woocommerce_rb_comment_meta', 50 ); // Вывод даты и имени автора
+add_action( 'woocommerce_rb_comment_text', 'woocommerce_rb_comment_text', 50 ); // Вывод текста комментария

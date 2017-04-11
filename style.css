@@ -13,3 +13,7 @@ basic reebuck theme
 .woocommerce .star-rating span {
     font-family: star;
 }
+
+.woocommerce .star-rating {
+    float: none;
+}

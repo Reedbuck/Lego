@@ -2,6 +2,24 @@
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0px 9px 1px 0px rgba(224,224,224,1);
+    .WOOF_Widget {
+        .woof_redraw_zone {
+            .woof_container_product_cat {
+                ul {
+                    padding-left: 0px;
+                    & > li {
+                        & > input[type='checkbox'] {
+                            display: none;
+                        }
+                        & > label.woof_checkbox_label_selected {
+                            font-weight: bolder;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .widget-title{
         font-weight: 700;
     }
