@@ -24,3 +24,5 @@ add_action( 'woocommerce_rb_open_product_info', 'woocommerce_rb_open_product_inf
 add_action( 'woocommerce_shop_article', 'woocommerce_shop_article', 10 ); // вывод артикула
 
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_catalog_product_thumbnail', 10 ); // миниатюра товара в каталоге
+
+add_action( 'woocommerce_rb_add_wish_catalog', 'woocommerce_rb_add_wish_catalog', 10 ); // Кнопка, добавить в wish в каталоге

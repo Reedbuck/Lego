@@ -30,3 +30,26 @@ if ( ! function_exists( 'woocommerce_rb_breadcrumb' ) ) {
 		wc_get_template( 'global/breadcrumb.php', $args );
 	}
 }
+
+
+// ссылка на wishlist
+
+if ( ! function_exists( 'woocommerce_rb_wish_view' ) ) {
+
+	/**
+	 * Output the WooCommerce Breadcrumb.
+	 *
+	 * @param array $args
+	 */
+	function woocommerce_rb_wish_view( ) {
+		$wishlist_url = YITH_WCWL()->get_wishlist_url();
+        $svg_url = get_template_directory_uri();
+        $count = YITH_WCWL()->count_products( $wishlist_id );
+        echo '  <a href="'. $wishlist_url . '">
+                    <span>
+                        <img src="'. $svg_url . '/images/wishlist.svg">
+                    </span>
+                    Желания ('.$count.')
+                </a>';
+	}
+}

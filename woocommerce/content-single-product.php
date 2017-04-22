@@ -65,9 +65,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                 do_action( 'woocommerce_template_single_rating' );
                 do_action( 'woocommerce_template_single_excerpt' );
                 do_action( 'woocommerce_template_single_sharing' );
+            if($_GET["arendate"]){
+                
+                do_action( 'woocommerce_rb_arend' );
                 do_action( 'woocommerce_rb_single_add_to_cart' );
+                
+                } else {
+                do_action( 'woocommerce_rb_single_add_to_cart' );
+            }
                 do_action( 'woocommerce_to_wish_list' );
                 do_action( 'woocommerce_rb_single_category' );
+                
+                
 
             ?>
 

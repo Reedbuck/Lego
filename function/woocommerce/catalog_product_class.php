@@ -64,10 +64,23 @@ if ( ! function_exists( 'woocommerce_catalog_product_thumbnail' ) ) {
 	 * @subpackage	Loop
 	 */
 	function woocommerce_catalog_product_thumbnail() {
+        global $product;
+        $attributes = $product->get_attributes();
         $temp_url = get_bloginfo('template_url');
-        echo '<div class="product-cart__wish"><a href="#"><img src="'. $temp_url .'/images/wishlist.svg"></a></div>';
-        if( 0 == 0 ){
-            echo '<div class="product-cart__new"><a href="#">NEW</a></div>';
+        $current_product = ( isset( $atts['product_id'] ) ) ? wc_get_product( $atts['product_id'] ) : false;
+        $current_product = $current_product ? $current_product : $product;
+        $product_id = $product->id;
+        $exists = YITH_WCWL()->is_product_in_wishlist( $current_product->id, $default_wishlist );
+        if( $exists == '' ){
+            echo '<div class="product-cart__wish"><a href="'. esc_url( add_query_arg( 'add_to_wishlist', $product_id ) ) .'"><img src="'. $temp_url .'/images/grey-wishlist.svg"></a></div>';
+        } else {
+            echo '<div class="product-cart__wish"><a href="?remove_from_wishlist='. $product_id .'"><img src="'. $temp_url .'/images/wishlist.svg"></a></div>';
+        }
+        $values = wc_get_product_terms( $product->id, $attributes['pa_years-creation']['name'], array( 'fields' => 'names' ) );
+        
+        
+        if( $values[0] == date('Y') ){
+            echo '<div class="product-cart__new"><a href="/shop?filter_years-creation=2017">NEW</a></div>';
         }
         echo woocommerce_get_product_thumbnail();
 	}
@@ -91,5 +104,28 @@ if ( ! function_exists( 'woocommerce_rb_open_product_info' ) ) {
     
         echo '<div class="product-cart__info">';
         
+	}
+}
+
+
+// добавить в wishlist
+
+if ( ! function_exists( 'woocommerce_rb_add_wish_catalog' ) ) {
+
+	/**
+	 * Output the WooCommerce Breadcrumb.
+	 *
+	 * @param array $args
+	 */
+	function woocommerce_rb_add_wish_catalog( ) {
+		$wishlist_url = YITH_WCWL()->get_wishlist_url();
+        $svg_url = get_template_directory_uri();
+        $count = YITH_WCWL()->count_products( $wishlist_id );
+        echo '  <a href="'. $wishlist_url . '">
+                    <span>
+                        <img src="'. $svg_url . '/images/wishlist.svg">
+                    </span>
+                    Желания ('.$count.')
+                </a>';
 	}
 }

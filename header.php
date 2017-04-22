@@ -18,12 +18,7 @@
             <div class="container">
                 <div class="col-md-12 subject-case">
                     <div class="subject-case__options wish">
-                        <a href="#">
-                            <span>
-                                <img src="<?php bloginfo('template_url'); ?>/images/wishlist.svg">
-                            </span>
-                            Желания (1)
-                        </a>
+                        <?php do_action( 'woocommerce_rb_wish_view' ); ?>
                     </div>
                     <div class="subject-case__options profile">
                         <a href="#">
@@ -34,7 +29,7 @@
                         </a>
                     </div>
                     <div class="subject-case__options basket">
-                            <a href="#">
+                            <a href="/cart">
                             <span>
                                 <img src="<?php bloginfo('template_url'); ?>/images/my-bag.svg">
                             </span>

@@ -129,7 +129,7 @@ if ( ! function_exists( 'woocommerce_rb_single_description' ) ) {
                 echo woocommerce_get_product_thumbnail();
             echo '</div>';
             echo '<div class="col-md-12 thrumb__button">';
-                echo '<a href="">Взять в аренду</a>';
+                echo '<a href="?arendate=true">Взять в аренду</a>';
             echo '</div>';
         echo '</div>';
 	}
@@ -212,6 +212,15 @@ if ( ! function_exists( 'woocommerce_rb_comment_text' ) ) {
 		echo '<div itemprop="description" class="description">';
 		comment_text();
 		echo '</div>';
+	}
+}
+if ( ! function_exists( 'woocommerce_rb_arend' ) ) {
+
+	/**
+	 * текст комментария
+	 */
+	function woocommerce_rb_arend() {
+		
 	}
 }
 
